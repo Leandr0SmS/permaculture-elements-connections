@@ -54,11 +54,11 @@ function  FormSitio ({
         <div className="card">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
               <label className="form-label" htmlFor="system_name">What's the name of your system?</label>
-              <input className="text-input" name="system_name" value={system_name_value} onChange={handleSitioFormChange} type="text" size="40" required/>
+              <input className="text-input" name="system_name" value={system_name_value} onChange={handleSitioFormChange} type="text" size="40" placeholder="Nome" required/>
               <label className="form-label" htmlFor="sitio_inputs">What does your element need (inputs)?</label>
-              <input className="text-input" type="text" name="sitio_inputs" value={sitio_inputs_value} onChange={handleSitioFormChange} size="40" required/>
+              <input className="text-input" type="text" name="sitio_inputs" value={sitio_inputs_value} onChange={handleSitioFormChange} size="40" placeholder="agua, gasolina, gas"  required/>
               <label className="form-label" htmlFor="sitio_outputs">What does your element provide (outputs)?</label>
-              <input className="text-input" type="text" name="sitio_outputs" value={sitio_outputs_value} onChange={handleSitioFormChange} size="40" required/>
+              <input className="text-input" type="text" name="sitio_outputs" value={sitio_outputs_value} onChange={handleSitioFormChange} size="40" placeholder="banana, sementes, açai" required/>
               <div className="div-btn">
                 <button className="form-btn" name="formSitio" value="formElement" type="button" onClick={onNextclick}>
                   NEXT
@@ -84,14 +84,14 @@ function FormElement({
         <div className="card">
             <form className="form" onSubmit={(e) => e.preventDefault()}>
                 <h2 className="card-heading">Let's add elements!</h2>
-                <label className="form-label" htmlFor="element_name">Whats the name of the element?</label>
-                <input className="text-input" type="text" name="element_name" value={element_name_value} onChange={onchange} size="40" required/>
-                <label className="form-label" htmlFor="element_inputs">What does your element need (inputs)?</label>
-                <input className="text-input" type="text" name="element_inputs" value={element_inputs_value} onChange={onchange} size="40" required/>
-                <label className="form-label" htmlFor="element_outputs">What does your element provide (outputs)?</label>
-                <input className="text-input" type="text" name="element_outputs" value={element_Outputs_value} onChange={onchange} size="40" required/>
-                <label className="form-label" htmlFor="element_intrinsic_characteristics">What are the intrinsic characteristics of this element?</label>
-                <input className="text-input" type="text" name="element_intrinsic_characteristics" value={element_intrinsic_characteristics_value} onChange={onchange} size="40" required/>
+                <label className="form-label" htmlFor="element_name">qual o nome do sistema?</label>
+                <input className="text-input" type="text" name="element_name" value={element_name_value} onChange={onchange} placeholder="galinha" size="40" required/>
+                <label className="form-label" htmlFor="element_inputs">O que o sistema precisa (inputs)?</label>
+                <input className="text-input" type="text" name="element_inputs" value={element_inputs_value} onChange={onchange} size="40"  placeholder="agua, milho, abrigo, cerragem" required/>
+                <label className="form-label" htmlFor="element_outputs">O que o sistema produz (outputs)?</label>
+                <input className="text-input" type="text" name="element_outputs" value={element_Outputs_value} onChange={onchange} size="40" placeholder="ovo, esterco, carne, ciscar" required/>
+                <label className="form-label" htmlFor="element_intrinsic_characteristics">Quais são as caracteristicas intrínsecas do sistema?</label>
+                <input className="text-input" type="text" name="element_intrinsic_characteristics" value={element_intrinsic_characteristics_value} onChange={onchange} placeholder="mata atlantica, chuva, agua" size="40" required/>
                 <div className="div-btn">
                     <button className="form-btn" type="button" name="formElement" value="formSitio" onClick={onPrevClick}>
                         <img className="btn-icon prev" src="./images/arrow-right.svg" alt="arrow icon to the rigth"/>
