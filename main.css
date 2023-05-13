@@ -30,7 +30,7 @@ body {
 }
 
 .element, .form {
-    padding: 1rem 0.3rem 2rem;
+    padding: 2rem 0.3rem;
 
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 20px;
@@ -226,4 +226,26 @@ body {
 .flip-box p {
     font-size: 0.9em;
     line-height: 1.5em;
+  }
+
+
+  @media (max-width: 590px) {
+    .text-input {
+      width: 15rem;
+      font-size: 0.7em;
+    }
+    .form-label {
+      font-size: 0.8em;
+    }
+    .form-btn {
+      padding: 0.7rem;
+      gap: 0.3rem;
+      font-size: 0.8em;
+    }
+    .element--title--info h1 {
+      font-size: 1.5em;
+    }
+    .element--title--info p {
+      font-size: 0.8em;
+    }
   }
