@@ -1,0 +1,229 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap'
+);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+* {
+    margin: 0;
+}
+body {
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+    background-color: #ccc;;
+    color: #fff;
+    background-image: url(./images/jucaras.JPG);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.element, .form {
+    padding: 1rem 0.3rem 2rem;
+
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+  
+    width: fit-content;
+    width: -moz-fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.text-input {
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
+}
+
+.div-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.form-btn {
+  border-radius: 0.7rem;
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-btn:hover {
+  cursor: pointer;
+}
+
+.btn-icon {
+  width: 0.8rem;
+  padding-top: 0.2rem;
+}
+
+.prev {
+  transform: scaleX(-1);
+}
+
+.svg {
+    background: #E6E0E9;
+    /* M3/Elevation Light/5 */
+    margin-top: 1rem;
+    
+    box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+}
+
+.element--title--info {
+    width: 35rem;
+}
+
+.element--title--info > h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.element--title--info > p {
+    text-align: center;
+    padding: 1rem 3rem;
+}
+
+.element--title--info > p > span {
+    text-decoration: underline;
+}
+
+.elements--cards {
+    width: 40rem;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.box-item {
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.flip-box {
+  -ms-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.flip-box-front,
+.flip-box-back {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  min-height: 10rem;
+  -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-color: #ccc;
+}
+
+.flip-box:hover .flip-box-front {
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff0057;
+  
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-back {
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.flip-box .inner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  outline: 1px solid transparent;
+  -webkit-perspective: inherit;
+  perspective: inherit;
+  z-index: 2;
+  
+  transform: translateY(-50%) translateZ(60px) scale(.94);
+  -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
+  -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
+  top: 50%;
+}
+
+.flip-box h1 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.flip-box p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
