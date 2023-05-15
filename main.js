@@ -1,5 +1,5 @@
 
-import {Element} from "./source/class.js";
+import {Element} from "../elements/class.js";
 
 const w = 450, h = 300, r = w > h ? w/4 : h/4, cx=(w/2), cy=(h/2);
 
@@ -62,7 +62,7 @@ function  FormSitio ({
               <div className="div-btn">
                 <button className="form-btn" name="formSitio" value="formElement" type="button" onClick={onNextclick}>
                   NEXT
-                  <img className="btn-icon" src="./images/arrow-right.svg" alt="arrow icon to the rigth"/>
+                  <img className="btn-icon" src="../images/arrow-right.svg" alt="arrow icon to the rigth"/>
                 </button>
               </div>
           </form> 
@@ -91,19 +91,19 @@ function FormElement({
                 <label className="form-label" htmlFor="element_outputs">O que o sistema produz (outputs)?</label>
                 <input className="text-input" type="text" name="element_outputs" value={element_Outputs_value} onChange={onchange} size="40" placeholder="ovo, esterco, carne, ciscar" required/>
                 <label className="form-label" htmlFor="element_intrinsic_characteristics">Quais são as caracteristicas intrínsecas do sistema?</label>
-                <input className="text-input" type="text" name="element_intrinsic_characteristics" value={element_intrinsic_characteristics_value} onChange={onchange} placeholder="mata atlantica, chuva, agua" size="40" required/>
+                <input className="text-input" type="text" name="element_intrinsic_characteristics" value={element_intrinsic_characteristics_value} onChange={onchange} placeholder="calor, variedade genetica, socializaçao" size="40" required/>
                 <div className="div-btn">
                     <button className="form-btn" type="button" name="formElement" value="formSitio" onClick={onPrevClick}>
-                        <img className="btn-icon prev" src="./images/arrow-right.svg" alt="arrow icon to the rigth"/>
+                        <img className="btn-icon prev" src="../images/arrow-right.svg" alt="arrow icon to the rigth"/>
                         Preview
                     </button>
                     <button className="next form-btn" type="button" onClick={onAddClick}>
                         Add
-                        <img className="btn-icon" src="./images/Plus.svg" alt="Plus icon"/>
+                        <img className="btn-icon" src="../images/Plus.svg" alt="Plus icon"/>
                     </button>
                     <button className="next form-btn" type="button" name="formElement" value="elementCard" onClick={onConnectClick}>
                         Connect
-                        <img className="btn-icon" src="./images/Connect.svg" alt="Connect icon"/>
+                        <img className="btn-icon" src="../images/Connect.svg" alt="Connect icon"/>
                     </button>
                 </div>
             </form> 
@@ -157,8 +157,8 @@ function App() {
 
     function handleFormSequence (e) {
         const {name, value} = e.target;
-        setComponentsManagement( p => ({
-            ...p,
+        setComponentsManagement( cm => ({
+            ...cm,
             [name]: false,
             [value]: true
         }))
@@ -166,8 +166,8 @@ function App() {
 
     function handleSitioFormChange(e) {
         const {value, name} = e.target;
-        setFormSitioData(p => ({
-            ...p,
+        setFormSitioData(fsd => ({
+            ...fsd,
             [name]: value
         }))
     };
@@ -178,8 +178,8 @@ function App() {
 
     function handleElementFormChange(e) {
         const {name, value} = e.target;
-        setFormElementData(p => ({
-            ...p,
+        setFormElementData(fed => ({
+            ...fed,
             [name]: value
         }))
     };
@@ -210,7 +210,7 @@ function App() {
         //create relations
         sitio.getRelationships();
         //Set states
-        setConnectionsData(p => ({...p, textPositonsCorrected}));
+        setConnectionsData(cd => ({...cd, textPositonsCorrected}));
         setSitioData(sitio);
     };
 
