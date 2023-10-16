@@ -1,5 +1,5 @@
 
-import {Element} from "../source/class.js";
+import {Element} from "./source/class.js";
 
 const w = 450, h = 300, r = w > h ? w/4 : h/4, cx=(w/2), cy=(h/2);
 
