@@ -15,7 +15,7 @@ body {
     font-family: 'Space Mono', monospace;
     background-color: #ccc;;
     color: #fff;
-    background-image: url(./images/jucaras.JPG);
+    background-image: url(/images/jucaras.JPG);
     background-size: cover;
     display: flex;
     align-items: center;

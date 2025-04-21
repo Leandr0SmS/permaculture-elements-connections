@@ -1,5 +1,8 @@
 
-import {Element} from "../elements/class.js";
+import {Element} from "./class.js";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './main.css'; 
 
 const w = 450, h = 300, r = w > h ? w/4 : h/4, cx=(w/2), cy=(h/2);
 
@@ -62,7 +65,7 @@ function  FormSitio ({
               <div className="div-btn">
                 <button className="form-btn" name="formSitio" value="formElement" type="button" onClick={onNextclick}>
                   NEXT
-                  <img className="btn-icon" src="../images/arrow-right.svg" alt="arrow icon to the rigth"/>
+                  <img className="btn-icon" src="/images/arrow-right.svg" alt="arrow icon to the rigth"/>
                 </button>
               </div>
           </form> 
@@ -94,16 +97,16 @@ function FormElement({
                 <input className="text-input" type="text" name="element_intrinsic_characteristics" value={element_intrinsic_characteristics_value} onChange={onchange} placeholder="calor, variedade genetica, socializaçao" size="40" required/>
                 <div className="div-btn">
                     <button className="form-btn" type="button" name="formElement" value="formSitio" onClick={onPrevClick}>
-                        <img className="btn-icon prev" src="../images/arrow-right.svg" alt="arrow icon to the rigth"/>
+                        <img className="btn-icon prev" src="/images/arrow-right.svg" alt="arrow icon to the rigth"/>
                         Preview
                     </button>
                     <button className="next form-btn" type="button" onClick={onAddClick}>
                         Add
-                        <img className="btn-icon" src="../images/Plus.svg" alt="Plus icon"/>
+                        <img className="btn-icon" src="/images/Plus.svg" alt="Plus icon"/>
                     </button>
                     <button className="next form-btn" type="button" name="formElement" value="elementCard" onClick={onConnectClick}>
                         Connect
-                        <img className="btn-icon" src="../images/Connect.svg" alt="Connect icon"/>
+                        <img className="btn-icon" src="/images/Connect.svg" alt="Connect icon"/>
                     </button>
                 </div>
             </form> 
@@ -292,6 +295,5 @@ function App() {
     )
 }
 
-const app = document.getElementById('root');
-const root = ReactDOM.createRoot(app);
-root.render(<App/>);
+ReactDOM.createRoot(document.getElementById('root'))
+.render(<App />);
